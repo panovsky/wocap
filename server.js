@@ -868,8 +868,6 @@ eurecaServer.exports.mrkDown = function(gId, idd, inx){
 	games[gId].markers.length = 0;
 	games[gId].figureOnClick = null;
 
-	
-
 	nextTurn(gId);
 
 }

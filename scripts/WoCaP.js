@@ -188,6 +188,7 @@ function battleComplete(win){
   }
 }
 
+
 // СМЕРТЬ ЗАВЕРШЕНА  fixme так себе способ, кнешн
 function deadComplete(){
   // убираем с поля
