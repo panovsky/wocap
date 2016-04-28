@@ -346,9 +346,10 @@ function preload() {
   });
   game.load.onFileComplete.add(updateProgressBar, this);
 
-  //считывание img
+  //intrfc
   game.load.image('testButton', 'img/testButton.jpg');
   
+
   //tiles
   game.load.spritesheet('tileStone', 'img/tiles/stone.jpg', 60, 60, 2);
 
@@ -368,6 +369,9 @@ function preload() {
   game.load.spritesheet('markers', 'img/markers.png', 60, 60, 3);
 
   game.load.image('preloaderBG', 'img/preloader_bg.jpg')
+
+  //
+  //game.smoothed = false;
 }
 
 function create() {
@@ -474,8 +478,14 @@ function startTestGame(gField, turn, figures){
   game.gameState = 'battle';
   eurecaServer.playerState(myId, 'battle');
 
-  addButton('exitBattle', 'testButton', myWidth*0.85, myHeight*0.1, 'exit', btExBattle, 4, 1);
-  addButton('hello', 'testButton', myWidth*0.85, myHeight*0.2, 'Hello!', btHello, 4, 1);
+  //  заглуха под интрфс
+  intf['tst'] = game.add.sprite(myWidth/4, 0, 'testButton');
+  intf['tst'].anchor.setTo(1,0);
+  intf['tst'].width = 300;
+  intf['tst'].height = myHeight;
+
+  addButton('exitBattle', 'testButton', myWidth*0.1, myHeight*0.1, 'exit', btExBattle, 4, 1);
+  addButton('hello', 'testButton', myWidth*0.1, myHeight*0.2, 'Hello!', btHello, 4, 1);
 
   // поле 
   if(myId == turn){
@@ -553,6 +563,9 @@ function createNewFigure(figure, gField){
 
     inv[ii].rightText = inv[ii].addChild(game.add.text(20, 20, figure.health.toString(), styleAttr));
     inv[ii].rightText.anchor.setTo(0.5, 0.25);
+
+    inv[ii].smoothed = false;
+    inv[ii].scale.set(1.5);
   
 }
 
@@ -842,9 +855,9 @@ function drawField(gField){
 
 
   if(w%2 == 0){
-    startPointX = myWidth/2-w*30+30;
+    startPointX = myWidth*.625-w*30+30;
   } else {
-    startPointX = myWidth/2-w*30;
+    startPointX = myWidth*.625-w*30+30;
   }
 
   //чет-нечет высота
@@ -902,9 +915,9 @@ function drawFieldRew(gField){
   field.h = gField.h;
   
   if(w%2 == 0){
-    startPointX = myWidth/2+w*30-30;
+    startPointX = myWidth*.625+w*30-30;
   } else {
-    startPointX = myWidth/2+w*30-30;
+    startPointX = myWidth*.625+w*30-30;
   }
 
   //чет-нечет высота
