@@ -1,0 +1,43 @@
+
+
+#inTxt{
+	position: absolute;
+	top: 250px;
+	z-index: 2;
+	width: 23%;
+	max-width: 1120px;
+	max-height: 100px;
+	height: 60%;
+	overflow: hidden;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	display: none;
+}
+
+input{
+	font: 150% arial;
+}
+
+button{
+	align-self: center;
+	align: center;
+	font: 150% arial;
+	left: 0;
+	right: 0;
+}
+
+/*#inEml:{
+	position: absolute;
+	font: 200% serif;
+}
+
+#inPwd:{
+	position: absolute;
+	font: 200% serif;
+}
+
+#img:{
+	position: absolute;
+	font: 200% serif;
+}*/

@@ -1,0 +1,1045 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rigt",
+				"rightBar"
+			],
+			[
+				"lf",
+				"leftText"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"l",
+				"loginSucces"
+			],
+			[
+				"batt",
+				"battle"
+			],
+			[
+				"ad",
+				"add"
+			],
+			[
+				"coor",
+				"coord"
+			],
+			[
+				"my",
+				"myId"
+			],
+			[
+				"s",
+				"state"
+			],
+			[
+				"togg",
+				"togglePreloader"
+			],
+			[
+				"pre",
+				"Preloader"
+			],
+			[
+				"se",
+				"setTo"
+			],
+			[
+				"an",
+				"anchor"
+			],
+			[
+				"pred",
+				"preloader"
+			],
+			[
+				"fig",
+				"figTmp"
+			],
+			[
+				"le",
+				"length-1"
+			],
+			[
+				"k",
+				"king"
+			],
+			[
+				"res",
+				"resTmp"
+			],
+			[
+				"move",
+				"moveMatrix"
+			],
+			[
+				"mov",
+				"moveRadius"
+			],
+			[
+				"a",
+				"attack"
+			],
+			[
+				"co",
+				"cost"
+			],
+			[
+				"FriendBonusa",
+				"friendBonusActiveMatrix"
+			],
+			[
+				"fri",
+				"friendBonusPassive"
+			],
+			[
+				"fr",
+				"friendBonusActive"
+			],
+			[
+				"Li",
+				"lifeTime"
+			],
+			[
+				"db",
+				"dbGetFigure"
+			],
+			[
+				"he",
+				"health"
+			],
+			[
+				"coord",
+				"coord"
+			],
+			[
+				"in",
+				"inv"
+			],
+			[
+				"dea",
+				"dead"
+			],
+			[
+				"sl",
+				"slash"
+			],
+			[
+				"id",
+				"idle"
+			],
+			[
+				"pla",
+				"playerState"
+			],
+			[
+				"sla",
+				"slashArr"
+			],
+			[
+				"ani",
+				"anim"
+			],
+			[
+				"tem",
+				"tempDef"
+			],
+			[
+				"attac",
+				"attackComplete"
+			],
+			[
+				"inpu",
+				"inputEnabled"
+			],
+			[
+				"from",
+				"fromCharCode"
+			],
+			[
+				"def",
+				"defInx"
+			],
+			[
+				"r",
+				"r"
+			],
+			[
+				"coo",
+				"coord"
+			],
+			[
+				"kill",
+				"killFigure"
+			],
+			[
+				"att",
+				"attInx"
+			],
+			[
+				"figu",
+				"figure"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"right",
+				"rightText"
+			],
+			[
+				"fi",
+				"figure"
+			],
+			[
+				"figure",
+				"figureOnClick"
+			],
+			[
+				"attr",
+				"styleAttr"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"sp",
+				"sprite"
+			],
+			[
+				"game",
+				"game"
+			],
+			[
+				"nu",
+				"num"
+			],
+			[
+				"gene",
+				"GenerateFigures"
+			],
+			[
+				"un",
+				"underCursorNum"
+			],
+			[
+				"und",
+				"underCursorNum2"
+			],
+			[
+				"mr",
+				"mrkDown"
+			],
+			[
+				"mrko",
+				"mrksOut"
+			],
+			[
+				"mrk",
+				"mrkOver"
+			],
+			[
+				"figur",
+				"figureOnClick"
+			],
+			[
+				"g",
+				"gId"
+			],
+			[
+				"gm",
+				"games"
+			],
+			[
+				"ac",
+				"anchor"
+			],
+			[
+				"coordto",
+				"coord_toX"
+			],
+			[
+				"w",
+				"w"
+			],
+			[
+				"cha",
+				"charCodeAt"
+			],
+			[
+				"gam",
+				"game"
+			],
+			[
+				"sprit",
+				"spritesheet"
+			],
+			[
+				"add",
+				"addMarkers"
+			],
+			[
+				"eure",
+				"eurecaClient"
+			],
+			[
+				"c",
+				"coord"
+			],
+			[
+				"Gener",
+				"GenerateFigures"
+			],
+			[
+				"fiel",
+				"field"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"eureca",
+				"eurecaServer"
+			],
+			[
+				"get",
+				"getClient"
+			],
+			[
+				"eurec",
+				"eurecaClient"
+			],
+			[
+				"clien",
+				"clientsWait"
+			],
+			[
+				"clie",
+				"clients"
+			],
+			[
+				"en",
+				"enId"
+			],
+			[
+				"new",
+				"newGame"
+			],
+			[
+				"clients",
+				"clientsWait"
+			],
+			[
+				"client",
+				"clientWait"
+			],
+			[
+				"login",
+				"login"
+			],
+			[
+				"yes",
+				"yes"
+			],
+			[
+				"Pass",
+				"password"
+			],
+			[
+				"alig",
+				"align-content"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"o",
+				"overflow"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"fon",
+				"font"
+			],
+			[
+				"des",
+				"destroy"
+			],
+			[
+				"destr",
+				"destroyerPhaserObject"
+			],
+			[
+				"log",
+				"login"
+			],
+			[
+				"y",
+				"ySize"
+			],
+			[
+				"x",
+				"xSize"
+			],
+			[
+				"butt",
+				"styleButton"
+			],
+			[
+				"tet",
+				"testButton"
+			],
+			[
+				"tank",
+				"tanksList"
+			],
+			[
+				"eu",
+				"EurecaServer"
+			],
+			[
+				"gree",
+				"greenPawn"
+			],
+			[
+				"va",
+				"vacant"
+			],
+			[
+				"inv",
+				"invIndex"
+			],
+			[
+				"sta",
+				"startPointY"
+			],
+			[
+				"toco",
+				"toCoordY"
+			],
+			[
+				"start",
+				"startPointY"
+			],
+			[
+				"star",
+				"startX"
+			],
+			[
+				"dra",
+				"dragObj"
+			],
+			[
+				"green",
+				"greenKing"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"ti",
+				"tile"
+			],
+			[
+				"file",
+				"field"
+			],
+			[
+				"str",
+				"startPointY"
+			],
+			[
+				"frp",
+				"frpt"
+			],
+			[
+				"mas",
+				"maskfr6"
+			],
+			[
+				"maskf",
+				"maskfr6"
+			],
+			[
+				"maskfr",
+				"maskfr6"
+			],
+			[
+				"h",
+				"hco"
+			],
+			[
+				"v",
+				"visible"
+			],
+			[
+				"red",
+				"red2"
+			],
+			[
+				"la",
+				"load"
+			],
+			[
+				"b7",
+				"b7press"
+			],
+			[
+				"b6",
+				"b6press"
+			],
+			[
+				"b3",
+				"b3press"
+			],
+			[
+				"ga",
+				"game"
+			],
+			[
+				"time",
+				"timeout	setTimeout function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1575,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/WoCaP.js",
+			"settings":
+			{
+				"buffer_size": 25726,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 31908,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_RoadMap",
+			"settings":
+			{
+				"buffer_size": 6300,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 289.0,
+		"history":
+		[
+			"print (a)",
+			"print a",
+			"a = 'valera'"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/W/home/localhost/www/wocap",
+		"/W/home/localhost/www/wocap/scripts"
+	],
+	"file_history":
+	[
+		"/E/webServers/home/localhost/www/makaka/emin.js",
+		"/E/webServers/home/localhost/www/wocapclient/README.md",
+		"/E/webServers/home/localhost/www/wocapserver/README.md",
+		"/E/webServers/home/localhost/www/wocap2/index.html",
+		"/W/home/localhost/www/wocapserver/Procfile",
+		"/E/webServers/home/localhost/www/wocapserver/Procfile",
+		"/C/Users/dmitr/node-js-getting-started/index.js",
+		"/E/webServers/home/localhost/www/wocapserver/package.json",
+		"/E/webServers/home/localhost/www/wocapserver/app.json",
+		"/C/Users/dmitr/node-js-getting-started/package.json",
+		"/W/home/localhost/www/wocap/Procfile",
+		"/W/home/localhost/www/wocap/scripts/styles.css",
+		"/W/home/localhost/www/wocap/scripts/srvr.js",
+		"/W/home/localhost/www/wocap/scripts/WoCaP.js",
+		"/E/un5_ppj/testProject/Assets/Editor/QCAR/WebcamProfiles/profiles.xml",
+		"/E/un5_ppj/testProject/Assets/Editor/QCAR/WebcamProfiles/_profiles.xml",
+		"/W/home/localhost/www/toHTML5/scripts/someFunctions.js",
+		"/W/home/localhost/www/toHTML5/scripts/nenOrgAnim.js",
+		"/W/home/localhost/www/toHTML5/RoadMap",
+		"/W/home/localhost/www/bionator/scripts/bionator_d.js",
+		"/W/home/localhost/www/bionator/roadmap",
+		"/W/home/localhost/www/wocap/img/WoCaP.js",
+		"/W/home/localhost/www/dbtst/exampl/testreg.php",
+		"/W/home/localhost/www/wocap/scripts/CanvasInput.js",
+		"/W/home/localhost/www/canvasinput/tst.js",
+		"/W/home/localhost/www/canvasinput/index.html",
+		"/W/home/localhost/www/dbtst/phps/bd.php",
+		"/E/webServers/home/localhost/www/tank2/js/tanks.js",
+		"/W/home/localhost/www/tank2/node_modules/eureca.io/examples/0-helloworld/index.html",
+		"/W/home/localhost/www/tank2/node_modules/eureca.io/examples/0-helloworld/server.js",
+		"/W/home/localhost/www/tank2/server2.js",
+		"/W/home/localhost/www/tank2/js/tanks.js",
+		"/W/home/localhost/www/tank2/index.html",
+		"/W/home/localhost/www/tank2/node_modules/eureca.io/examples/6-authentication/index.html",
+		"/W/home/localhost/www/tank2/js/eureca.js",
+		"/W/home/localhost/www/tank2/node_modules/eureca.io/examples/6-authentication/client.js",
+		"/W/home/localhost/www/tank2/server.js",
+		"/W/home/localhost/www/wocap/scripts/src/demo-particle/app.js",
+		"/D/World_of_Tanks/res/scripts/item_defs/tankmen/china.xml",
+		"/W/home/localhost/www/wocap/scripts/src/demo-loadbalancing/cloud-app-info.js",
+		"/W/home/localhost/www/wocap/scripts/src/demo-loadbalancing/app.js",
+		"/W/home/localhost/www/toHTML5/scripts/phaser.min.js",
+		"/D/hhh.txt",
+		"/W/home/localhost/www/toHTML5/index.html",
+		"/W/home/localhost/www/popuptst/load-modal.html",
+		"/W/home/localhost/www/toHTML5/576/.DS_Store",
+		"/W/home/localhost/www/toHTML5/576/btnplaypause_57.as",
+		"/W/home/localhost/www/toHTML5/576/MainTimeline.as",
+		"/W/home/localhost/www/toHTML5/scripts/WoCaP.js",
+		"/E/webServers/home/localhost/www/popuptst/load-modal.html",
+		"/E/webServers/home/localhost/www/dbtst/phps/index.php",
+		"/E/webServers/home/localhost/www/dbtst/phps/reg.php",
+		"/E/webServers/home/localhost/www/dbtst/phps/save_user.php",
+		"/E/webServers/home/localhost/www/dbtst/phps/db.php",
+		"/E/webServers/home/localhost/www/dbtst/phps/bd.php",
+		"/E/webServers/home/localhost/www/dbtst/phps/testreg.php",
+		"/C/Users/dmitr/Downloads/db_poolusers.sql",
+		"/E/webServers/home/localhost/www/dbtst/exampl/bd.php",
+		"/W/home/localhost/www/dbtst/php/db.php",
+		"/W/home/localhost/www/dbtst/php/reg.php",
+		"/W/home/localhost/www/dbtst/php/save_user.php",
+		"/W/home/localhost/www/dbtst/php/index.php",
+		"/W/home/localhost/www/dbtst/php/testreg.php",
+		"/E/webServers/home/localhost/www/dbtst/lib/connect.php",
+		"/E/webServers/home/localhost/www/dbtst/registration/template/registration.php",
+		"/E/webServers/home/localhost/www/dbtst/registration/index.php",
+		"/E/webServers/home/localhost/www/dbtst/lib/function-global.php",
+		"/E/webServers/home/localhost/www/dbtst/lib/regstr.js",
+		"/E/webServers/home/localhost/www/pool/scripts/pool.js",
+		"/E/webServers/home/localhost/www/pool/scripts/dojo.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"deadco",
+			"deadc",
+			"deadComplete,",
+			"attackComplete",
+			"deadc",
+			"dead",
+			"deadc",
+			"addButton",
+			"testButton",
+			"addbu",
+			"addbutt",
+			";\n",
+			"killf",
+			"new game",
+			"atta",
+			"GenerateFiguresPawn",
+			"GenerateFigures",
+			"GenerateFiguresPawn",
+			"addSpawnMarkers",
+			"ung",
+			"figureOnClick =",
+			"unget",
+			"ungetMarkers",
+			"figDown",
+			"dbg",
+			"mrkDown",
+			"addSpawnMarkers",
+			"spaw",
+			"char",
+			"addSpawnMarkers",
+			"addMarkers",
+			"getSpawnMarkers",
+			"getMarkers",
+			"addMarkers",
+			"coord_toReserve",
+			"coord_toX",
+			"coord_tox",
+			"coord_toReserve",
+			"coord_toXY",
+			"coord_toReserve",
+			"GenerateFigures",
+			"dbGetFigure",
+			"cons",
+			"coord_toReserve",
+			"dbGetFigure",
+			"coord_toXY",
+			"enew",
+			"coord_toXY",
+			"newfi",
+			"coord_toXY",
+			"createNewFigure",
+			"GenerateFigures",
+			"togg",
+			"togglePreloader",
+			"tgp",
+			"tg",
+			"addNewFigure",
+			"newf",
+			"togg",
+			"battleStart",
+			"butt",
+			"startTestGame",
+			"createNewFigure",
+			"create",
+			"eurecaClientSetup",
+			"preloader",
+			"gField",
+			"GenerateFigures",
+			"figure",
+			"addNewFigure",
+			"startTestGame",
+			"addNewFigure",
+			"GenerateFigures",
+			"dbGetFigure",
+			"GenerateFigures",
+			"dbGetFigure",
+			"GenerateFigures",
+			"dbGetFigure",
+			"fixme",
+			"dbGetFigure",
+			"dbG",
+			"dbg",
+			"DATABASE",
+			"conne",
+			"pawn",
+			"king",
+			".anim",
+			"runar",
+			"idleArr",
+			"pawn",
+			"killFigure",
+			"charCodeAt",
+			"toggleVacant",
+			"vector",
+			"scale.se",
+			"coord_toY",
+			"toggleVacant",
+			"поля",
+			"rightText",
+			"coord_toInx",
+			"toggleVa",
+			"toggleva",
+			"toggleVacant",
+			"u",
+			"getFigureAttack",
+			"attrba",
+			"styleb",
+			"attack",
+			"moveMatrixI",
+			"sprite",
+			"startTestGame",
+			"figu",
+			"kill",
+			"vacant ",
+			"toggleVacant",
+			"поля",
+			"поле",
+			"field.tile",
+			"vacant",
+			"turn",
+			"angle",
+			"press",
+			"btov",
+			"addMarkers",
+			"id1",
+			"coord_toXY",
+			"startTestGame",
+			"createf"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								908,
+								965
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scripts/WoCaP.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25726,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5168,
+								5168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29587,
+								29587
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 10840.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "_RoadMap",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3565,
+								3565
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2511.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.695333070757,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "wocap.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 132.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
