@@ -999,4 +999,4 @@ eurecaServer.exports.checkLogin = function(con, eml, pwd){
 
 
 
-server.listen(8000); //8080 наверн, как везде?
+server.listen(8000); //8080 наверн, как везде? or not?
