@@ -13,10 +13,12 @@ var express = require('express'),
 app.use(express.static(__dirname));
 
 //get eureca server class
-var EurecaServer = require('eureca.io').EurecaServer;
+//var EurecaServer = require('eureca.io').EurecaServer;
+var Eureca = require('eureca.io');
 
 //create an instance of EurecaServer
-var eurecaServer = new EurecaServer({allow:['setId', 'spawnEnemy', 'kill', 'testRemote', 'loginAnswer', 'newGame', 'chat', 'getMarkers', 'getSpawnMarkers', 'ungetMarkers', 'getFigureMove', 'getFigureAttack', 'addNewFigure', 'tgPreloader']});
+//var eurecaServer = new EurecaServer({allow:['setId', 'spawnEnemy', 'kill', 'testRemote', 'loginAnswer', 'newGame', 'chat', 'getMarkers', 'getSpawnMarkers', 'ungetMarkers', 'getFigureMove', 'getFigureAttack', 'addNewFigure', 'tgPreloader']});
+var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'testRemote', 'loginAnswer', 'newGame', 'chat', 'getMarkers', 'getSpawnMarkers', 'ungetMarkers', 'getFigureMove', 'getFigureAttack', 'addNewFigure', 'tgPreloader']});
 var clients = {};
 
 // ОЧЕРЕДЬ
