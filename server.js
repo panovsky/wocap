@@ -323,8 +323,8 @@ function addSpawnMarkers(gId, fig, result, idd){
 		if(idd == games[gId].id1){
 			var crd = 'A:'+ii; 
 		} else if(idd == games[gId].id2){
-			var crd = String.fromCharCode(63+ww) + ':' + ii;
-			console.log(crd);
+			var crd = String.fromCharCode(62+ww) + ':' + ii;
+			//console.log(crd);
 		}
 		if(games[gId].field.tile[coord_toInx(crd, ww, hh)].vacant == null){ // клэтка свободна?
 			result.push({});
