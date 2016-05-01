@@ -745,12 +745,22 @@ eurecaServer.exports.mrkDown = function(gId, idd, inx){
 		//	уменьшаем хп
 		games[gId].figure[defInx].health -= games[gId].figure[attInx].attack;
 		
-		games[gId].figure[attInx].health -= games[gId].figure[defInx].attack;
+		if(games[gId].figure[attInx].type != 'pawn') {
+			games[gId].figure[attInx].health -= games[gId].figure[defInx].attack;
+		}
 
-		//проверяем умер или нет атакующий
+		// схороняем координаты защищающещщящящ - пригодятся
+		var defTempCoord = games[gId].figure[defInx].coord;
+
+		//проверяем умер или нет атакующий, и второй
 
 		if(games[gId].figure[attInx].health<=0){
 			killFigure(gId, attInx);
+		} else if(games[gId].figure[defInx].health<=0){
+			toggleVacant(gId, games[gId].figure[attInx].coord, idd, games[gId].figureOnClick);
+		 	killFigure(gId, defInx);
+			games[gId].figure[attInx].coord = defTempCoord;
+			toggleVacant(gId, games[gId].figure[attInx].coord, idd, games[gId].figureOnClick); 
 		} else {
 			//	врубать это только если юнит ближнего боя
 			var tc = games[gId].figure[defInx].coord
@@ -852,11 +862,9 @@ eurecaServer.exports.mrkDown = function(gId, idd, inx){
 			}
 		}
 
-		var defTempCoord = games[gId].figure[defInx].coord;
+		
 
-		if(games[gId].figure[defInx].health<=0){
-		 	killFigure(gId, defInx);
-		}
+		
 		
 
 		//	fixme координаты забыл передать, ёбана! В getFigureAttack  проверять координаты прост, и выполнять две анимации

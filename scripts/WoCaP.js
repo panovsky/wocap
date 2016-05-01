@@ -157,10 +157,10 @@ var eurecaClientSetup = function() {
     
     inv[defInx].health = defHp;
     inv[defInx].rightText.setText(defHp.toString());
-    inv[defInx].animations.play('pawn@hit', 15, false);
-
-    //  анимация смерти
-    if(inv[defInx].health == 0){
+    
+    if(inv[defInx].health > 0){
+      inv[defInx].animations.play('pawn@hit', 15, false);
+    } else if(inv[defInx].health == 0){ //  анимация смерти
       inv[defInx].tween = game.add.tween(inv[defInx]).to({x: inv[defInx].x}, 300, "Quart.easeOut", true);
       inv[defInx].tween = game.add.tween(inv[defInx]).to({y: inv[defInx].y}, 300, "Quart.easeOut", true);
       inv[defInx].tween.onComplete.add(deadComplete, inv[defInx]);
@@ -191,8 +191,13 @@ function battleComplete(win){
 
 // СМЕРТЬ ЗАВЕРШЕНА  fixme так себе способ, кнешн
 function deadComplete(){
-  // убираем с поля
-  this.tween = game.add.tween(this).to( { x: 40, y: this.y }, 300, "Quart.easeOut", true);
+  // убираем с поля на лево
+  if(this.x<myWidth*0.625){
+    var xx = myWidth*0.625 - field.w/2*60 - 150 + Math.ceil(Math.random()*100)-50;
+  } else {
+    var xx = myWidth*0.625 + field.w/2*60 + 150 + Math.ceil(Math.random()*100)-50;
+  }
+  this.tween = game.add.tween(this).to( { x: xx, y: this.y }, 300, "Quart.easeOut", true);
   this.leftBar.visible = false;
   this.leftText.visible = false;
   this.rightBar.visible = false;
