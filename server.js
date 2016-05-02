@@ -308,6 +308,7 @@ eurecaServer.exports.activateFigure = function(gId, idd, inx){
 				moveMatrixI(gId, fig, games[gId].markers)
 				break
 			case 'F': 
+				moveMatrixF(gId, fig, games[gId].markers)
 				break
 		}
 		remote.getMarkers(games[gId].markers);
@@ -977,7 +978,216 @@ function moveMatrixP(gId, fig, result){
 
 }
 
-//	матрица хода F
+//	матрица хода F (uur, urr, drr, ddr, ddl, dll, ull, uul), vector? radius?
+function moveMatrixF(gId, fig, result){
+	var ww = games[gId].field.w;
+	var hh = games[gId].field.h;
+	
+	//var num = coord_toInx(fig.coord, ww, hh);
+
+	if(fig.coord.length>3){
+		var gorz=parseInt(fig.coord[2]+fig.coord[3], 10);
+	} else {
+		var gorz=parseInt(fig.coord[2], 10);
+	}
+
+	var vert =  fig.coord[0].charCodeAt(0)-64;
+
+	// fixme люто задуматься о радиусе коняги
+
+	//uur
+	if(gorz+1 <= ww && vert+2 <= hh){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert+2) + ':' + (gorz+1).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'uur';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'uur';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'uur';
+			//break;
+		}
+	}
+
+	//urr
+	if(gorz+2 <= ww && vert+1 <= hh){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert+1) + ':' + (gorz+2).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+	//drr
+	if(gorz+2 <= ww && vert-1 >= 1){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert-1) + ':' + (gorz+2).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+	//ddr
+	if(gorz+1 <= ww && vert-2 >= 1){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert-2) + ':' + (gorz+1).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+	//ddl
+	if(gorz-1 >= 1 && vert-2 >= 1){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert-2) + ':' + (gorz-1).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+	//dll
+	if(gorz-2 >= 1 && vert-1 >= 1){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert-1) + ':' + (gorz-2).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+	//ull
+	if(gorz-2 >= 1 && vert+1 <= hh){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert+1) + ':' + (gorz-2).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+	//uul
+	if(gorz-1 >= 1 && vert+2 <= hh){
+		result.push({});
+		result[result.length-1].coord = (String.fromCharCode(64+vert+2) + ':' + (gorz-1).toString());
+
+		if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+			result[result.length-1].type = 'move';
+			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+			if(fig.id == games[gId].id1){
+				result[result.length-1].angle = 0;					
+			} else if(fig.id == games[gId].id2){
+				result[result.length-1].angle = 180;
+			}
+		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+			// result[result.length-1].type = 'support'; 
+			// result[result.length-1].vector = 'urr';
+			//break;
+		} else {
+			result[result.length-1].type = 'attack';
+			result[result.length-1].vector = 'urr';
+			//break;
+		}
+	}
+
+}
 
 //////////////////
 //	ПЕРЕКЛ ХОДА
