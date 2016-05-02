@@ -130,13 +130,14 @@ function createGame(id1, id2){
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
+	dbGetFigure(games[id1+id2], id1, '0:0', 'horse');//генерим для первого игрока
 
 
 	dbGetFigure(games[id1+id2], id2, 'D:2', 'king');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, 'D:3', 'pawn');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, '0:0', 'horse');//генерим для не первого игрока
 	
 	var remote =  eurecaServer.getClient(id1);
 	remote.newGame(id1+id2, id2, games[id1+id2].field, games[id1+id2].turn/*, games[id1+id2].figure*/);
@@ -294,10 +295,14 @@ eurecaServer.exports.activateFigure = function(gId, idd, inx){
 		remote.getSpawnMarkers(games[gId].markers);
 	} else { // иначе смотрим матрицу движения
 		switch (fig.moveMatrix) { // кто блять придумал синтаксис свитча? ни раздела строк, нихуя бля! чорт ногу сломит
+			case 'P':
+				moveMatrixP(gId, fig, games[gId].markers)
+				break
 			case 'O': 
 				moveMatrixO(gId, fig, games[gId].markers)
 				break
 			case 'X': 
+				moveMatrixX(gId, fig, games[gId].markers)
 				break
 			case 'I': 
 				moveMatrixI(gId, fig, games[gId].markers)
@@ -667,6 +672,312 @@ function moveMatrixI(gId, fig, result){
 	}
 
 }
+
+//	матрица хода X
+function moveMatrixX(gId, fig, result){
+	var ww = games[gId].field.w;
+	var hh = games[gId].field.h;
+	
+	//var num = coord_toInx(fig.coord, ww, hh);
+
+	if(fig.coord.length>3){
+		var gorz=parseInt(fig.coord[2]+fig.coord[3], 10);
+	} else {
+		var gorz=parseInt(fig.coord[2], 10);
+	}
+
+	var vert =  fig.coord[0].charCodeAt(0)-64;
+
+	//диагональ 
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz+rr <= ww && vert+rr <= hh){//справа верх
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert+rr) + ':' + (gorz+rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'ru';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 45;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 225;
+				}
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'ru';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'ru';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz-rr >= 1 && vert+rr <= hh){//слева верх
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert+rr) + ':' + (gorz-rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'lu';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 315;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 135;
+				}
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'lu';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'lu';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz-rr >= 1 && vert-rr >= 1){//слева низ
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert-rr) + ':' + (gorz-rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'ld';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 225;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 45;
+				}
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'ld';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'ld';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz+rr <= ww && vert-rr >= 1){//справа низ
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert-rr) + ':' + (gorz+rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'rd';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 135;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 315;
+				}
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'rd';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'rd';
+				break;
+			}
+		}
+	}
+
+}
+
+//	матрица хода P
+function moveMatrixP(gId, fig, result){
+	var ww = games[gId].field.w;
+	var hh = games[gId].field.h;
+	
+	//var num = coord_toInx(fig.coord, ww, hh);
+
+	if(fig.coord.length>3){
+		var gorz=parseInt(fig.coord[2]+fig.coord[3], 10);
+	} else {
+		var gorz=parseInt(fig.coord[2], 10);
+	}
+
+	var vert =  fig.coord[0].charCodeAt(0)-64;
+
+
+	//	fixme много одинакового кодаа! Зафигачить фцию и нырять в неё
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){ 
+		if(gorz+rr <= ww){//справа
+			result.push({});
+			result[result.length-1].coord = (fig.coord[0] + ':' + (gorz+rr).toString());
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//fixme вывести в консоль и глянуть 
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'r';//для передвижения этот параметр не обязателен. только для атаки/помогаки
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 90;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 270;
+				}
+			} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				// result[result.length-1].type = 'support'; 
+				// result[result.length-1].vector = 'r';
+				break;
+			} else {
+				// result[result.length-1].type = 'attack';
+				// result[result.length-1].vector = 'r';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){ 
+		if(gorz-rr >= 1){//слева
+			result.push({});
+			result[result.length-1].coord = (fig.coord[0] + ':' + (gorz-rr).toString());
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'l';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 270;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 90;
+				} 
+			} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				// result[result.length-1].type = 'support'; 
+				// result[result.length-1].vector = 'l';
+				break;
+			} else {
+				// result[result.length-1].type = 'attack';
+				// result[result.length-1].vector = 'l';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){ 
+		if(vert+rr <= hh){//сверху
+			result.push({});
+			result[result.length-1].coord = (String.fromCharCode(64+vert+rr) + ':' + gorz.toString());
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'u';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 0;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 180;
+				}
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				// result[result.length-1].type = 'support'; 
+				// result[result.length-1].vector = 'u';
+				break;
+			} else {
+				// result[result.length-1].type = 'attack';
+				// result[result.length-1].vector = 'u';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){ 
+		if(vert-rr >= 1){//снизу
+			result.push({});
+			result[result.length-1].coord = (String.fromCharCode(64+vert-rr) + ':' + gorz.toString());
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				result[result.length-1].type = 'move';
+				result[result.length-1].vector = 'd';
+				if(fig.id == games[gId].id1){
+					result[result.length-1].angle = 180;					
+				} else if(fig.id == games[gId].id2){
+					result[result.length-1].angle = 0;
+				}
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				// result[result.length-1].type = 'support'; 
+				// result[result.length-1].vector = 'd';
+				break;
+			} else {
+				// result[result.length-1].type = 'attack';
+				// result[result.length-1].vector = 'd';
+				break;
+			}
+		}
+	}
+
+
+
+	//диагональ 
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz+rr <= ww && vert+rr <= hh){//справа верх
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert+rr) + ':' + (gorz+rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				 
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'ru';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'ru';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz-rr >= 1 && vert+rr <= hh){//слева верх
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert+rr) + ':' + (gorz-rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				 
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'lu';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'lu';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz-rr >= 1 && vert-rr >= 1){//слева низ
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert-rr) + ':' + (gorz-rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				 
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'ld';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'ld';
+				break;
+			}
+		}
+	}
+
+	for(var rr = 1; rr<= fig.moveRadius; rr+=1){
+		if(gorz+rr <= ww && vert-rr >= 1){//справа низ
+			result.push({});
+			result[result.length-1].coord = String.fromCharCode(64+vert-rr) + ':' + (gorz+rr).toString();
+			if( games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == null){//пиздец каой
+				 
+			}else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
+				result[result.length-1].type = 'support'; 
+				result[result.length-1].vector = 'rd';
+				break;
+			} else {
+				result[result.length-1].type = 'attack';
+				result[result.length-1].vector = 'rd';
+				break;
+			}
+		}
+	}
+
+}
+
+//	матрица хода F
 
 //////////////////
 //	ПЕРЕКЛ ХОДА

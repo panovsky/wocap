@@ -160,7 +160,7 @@ var eurecaClientSetup = function() {
     
     if(inv[defInx].health > 0){
       inv[defInx].animations.play('pawn@hit', 15, false);
-    } else if(inv[defInx].health == 0){ //  анимация смерти
+    } else if(inv[defInx].health <= 0){ //  анимация смерти
       inv[defInx].tween = game.add.tween(inv[defInx]).to({x: inv[defInx].x}, 300, "Quart.easeOut", true);
       inv[defInx].tween = game.add.tween(inv[defInx]).to({y: inv[defInx].y}, 300, "Quart.easeOut", true);
       inv[defInx].tween.onComplete.add(deadComplete, inv[defInx]);
@@ -228,7 +228,7 @@ function attackComplete(){
     this.animations.play('pawn@idle', 15, true);
   }
 
-  if(inv[this.target].health!==0){
+  if(inv[this.target].health>0){
     inv[this.target].animations.play('pawn@idle', 15, true);
   }
 }
@@ -360,6 +360,7 @@ function preload() {
 
   game.load.spritesheet('pawn', 'img/pawn_list_.png', 60, 59, 100);
   game.load.spritesheet('king', 'img/king_list_.png', 60, 60, 100);
+  game.load.spritesheet('horse', 'img/horse_list_.png', 60, 60, 100);
 
   //  pieces
   game.load.image('greenPawn', 'img/greenPawn.png');
