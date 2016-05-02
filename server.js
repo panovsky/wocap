@@ -126,7 +126,7 @@ function createGame(id1, id2){
 
 	//	fixme вытяаскивать из БД стэк игрока
 	dbGetFigure(games[id1+id2], id1, 'A:4', 'king');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, 'B:1', 'pawn');//генерим для первого игрока
+	dbGetFigure(games[id1+id2], id1, 'B:1', 'slon');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
