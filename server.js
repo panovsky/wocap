@@ -129,14 +129,14 @@ function createGame(id1, id2){
 	dbGetFigure(games[id1+id2], id1, 'B:1', 'slon');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
+	dbGetFigure(games[id1+id2], id1, '0:0', 'tower');//генерим для первого игрока
 	dbGetFigure(games[id1+id2], id1, '0:0', 'horse');//генерим для первого игрока
 
 
 	dbGetFigure(games[id1+id2], id2, 'D:2', 'king');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, 'D:3', 'pawn');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, '0:0', 'tower');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'horse');//генерим для не первого игрока
 	
 	var remote =  eurecaServer.getClient(id1);

@@ -362,6 +362,7 @@ function preload() {
   game.load.spritesheet('king', 'img/king_list_.png', 60, 60, 100);
   game.load.spritesheet('horse', 'img/horse_list_.png', 60, 60, 100);
   game.load.spritesheet('slon', 'img/slon_list_.png', 60, 60, 100);
+  game.load.spritesheet('tower', 'img/tower_list_.png', 60, 58, 100);
 
   //  pieces
   game.load.image('greenPawn', 'img/greenPawn.png');
