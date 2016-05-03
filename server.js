@@ -134,7 +134,7 @@ function createGame(id1, id2){
 
 
 	dbGetFigure(games[id1+id2], id2, 'D:2', 'king');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, 'D:3', 'pawn');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, 'D:3', 'slon');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'tower');//генерим для не первого игрока
 	dbGetFigure(games[id1+id2], id2, '0:0', 'horse');//генерим для не первого игрока
@@ -182,7 +182,11 @@ var GenerateField = function(w, h){
 			this.tile[num].coord += ':' + ww.toString();
 			this.tile[num].vacant = null;
 			this.tile[num].figInx = null;
-			this.tile[num].type = 'tileStone'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)
+			if(Math.random() < 0.5){ // fixme не рандом!
+				this.tile[num].type = 'tileGrass'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)				
+			} else {
+				this.tile[num].type = 'tileStone'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)				
+			}
 			this.tile[num].info = 'Информация'; //fixme too
 			this.tile[num].bonus = 'пока хз как реализовать, видимо тупo CASE';
 

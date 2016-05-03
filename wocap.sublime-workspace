@@ -531,7 +531,7 @@
 			"file": "scripts/WoCaP.js",
 			"settings":
 			{
-				"buffer_size": 26399,
+				"buffer_size": 26469,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 51554,
+				"buffer_size": 51556,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 7157,
+				"buffer_size": 7634,
 				"line_ending": "Windows"
 			}
 		}
@@ -682,6 +682,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dbg",
 			"movema",
 			"dbg",
 			"horse",
@@ -808,8 +809,7 @@
 			"поля",
 			"rightText",
 			"coord_toInx",
-			"toggleVa",
-			"toggleva"
+			"toggleVa"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -866,15 +866,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26399,
+						"buffer_size": 26469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8995,
-								8995
+								9084,
+								9084
 							]
 						],
 						"settings":
@@ -896,15 +896,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 51554,
+						"buffer_size": 51556,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8573,
-								8579
+								3393,
+								3393
 							]
 						],
 						"settings":
@@ -913,10 +913,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4066.0,
+						"translation.y": 1565.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -931,15 +931,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7157,
+						"buffer_size": 7634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3215,
-								3215
+								3619,
+								3619
 							]
 						],
 						"settings":
@@ -947,10 +947,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2738.0,
+						"translation.y": 2854.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1032,7 +1032,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
