@@ -359,6 +359,7 @@ function preload() {
   game.load.spritesheet('tileStone', 'img/tiles/stone.jpg', 60, 60, 2);
   game.load.spritesheet('tileGrass', 'img/tiles/grass.jpg', 60, 60, 2);
   game.load.spritesheet('tileForest', 'img/tiles/forest.jpg', 60, 60, 2);
+  game.load.spritesheet('tileGold', 'img/tiles/gold.jpg', 60, 60, 2);
 
   game.load.spritesheet('pawn', 'img/pawn_list_.png', 60, 59, 100);
   game.load.spritesheet('king', 'img/king_list_.png', 60, 60, 100);
@@ -575,7 +576,7 @@ function createNewFigure(figure, gField){
     inv[ii].rightText.anchor.setTo(0.5, 0.25);
 
     inv[ii].smoothed = false;
-    inv[ii].scale.set(1.5);
+    //inv[ii].scale.set(1.5);
   
 }
 
