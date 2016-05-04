@@ -182,9 +182,9 @@ function battleComplete(win){
 
 
   if(win){
-    addButton('exitBattle', 'testButton', myWidth*0.5, myHeight*0.5, 'You win!', btExBattle, 4, 1);
+    addButton('winBattle', 'testButton', myWidth*0.5, myHeight*0.5, 'You win!', btExBattle, 4, 1);
   } else {
-    addButton('exitBattle', 'testButton', myWidth*0.5, myHeight*0.5, 'You loose...', btExBattle, 4, 1);
+    addButton('looseBattle', 'testButton', myWidth*0.5, myHeight*0.5, 'You loose...', btExBattle, 4, 1);
   }
 }
 
@@ -493,13 +493,20 @@ function startTestGame(gField, turn, figures){
   eurecaServer.playerState(myId, 'battle');
 
   //  заглуха под интрфс
-  intf['tst'] = game.add.sprite(myWidth/4, 0, 'testButton');
-  intf['tst'].anchor.setTo(1,0);
-  intf['tst'].width = 300;
-  intf['tst'].height = myHeight;
+  // intf['tst'] = game.add.sprite(myWidth/4, 0, 'testButton');
+  // intf['tst'].anchor.setTo(1,0);
+  // intf['tst'].width = 300;
+  // intf['tst'].height = myHeight;
 
-  addButton('exitBattle', 'testButton', myWidth*0.1, myHeight*0.1, 'exit', btExBattle, 4, 1);
-  addButton('hello', 'testButton', myWidth*0.1, myHeight*0.2, 'Hello!', btHello, 4, 1);
+  // testbutton 50x50
+  // кароч для верстки надо пересчитывать, или анкор ставить в (0, 0)
+
+  addButton('exitBattle', 'testButton', 70, 25, 'exit', btExBattle, 2.8, 1);
+  addButton('settings', 'testButton', 210, 25, 'settings', btHello, 2.8, 1);  
+  addButton('timer', 'testButton', 140, 75, 'timer and timer', btHello, 5.6, 1);
+  addButton('chat', 'testButton', 140, 125, 'say something', btHello, 5.6, 1);
+  addButton('log', 'testButton', 140, 250, 'log', btHello, 5.6, 4);
+  addButton('reserve', 'testButton', 140, 490, 'reserve', btHello, 5.6, 5.6);
 
   // поле 
   if(myId == turn){
@@ -829,13 +836,15 @@ function btPress(){
 }
 
 function btOver(){
-  this.scale.setTo(this.xSize * 1.1, this.ySize * 1.1);
-  intf[this.index+'T'].scale.set(1.1);
+  this.tint = 0xAAFFAA;
+  //this.scale.setTo(this.xSize * 1.1, this.ySize * 1.1);
+  //intf[this.index+'T'].scale.set(1.1);
 }
 
 function btOut(){
-  this.scale.setTo(this.xSize, this.ySize);
-  intf[this.index+'T'].scale.set(1);
+  this.tint = 0xFFFFFF;
+  // this.scale.setTo(this.xSize, this.ySize);
+  // intf[this.index+'T'].scale.set(1);
 }
 
 ////////////////
