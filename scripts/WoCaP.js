@@ -356,9 +356,12 @@ function preload() {
   
 
   //tiles
+  game.load.spritesheet('tileEmpty', 'img/tiles/empty.jpg', 60, 60, 2);
   game.load.spritesheet('tileStone', 'img/tiles/stone.jpg', 60, 60, 2);
   game.load.spritesheet('tileGrass', 'img/tiles/grass.jpg', 60, 60, 2);
   game.load.spritesheet('tileForest', 'img/tiles/forest.jpg', 60, 60, 2);
+  game.load.spritesheet('tileWater', 'img/tiles/water.jpg', 60, 60, 2);
+  game.load.spritesheet('tileRock', 'img/tiles/rock.jpg', 60, 60, 2);
   game.load.spritesheet('tileGold', 'img/tiles/gold.jpg', 60, 60, 2);
 
   game.load.spritesheet('pawn', 'img/pawn_list_.png', 60, 59, 100);

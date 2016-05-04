@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"kill",
+				"killMe"
+			],
+			[
 				"movema",
 				"moveMatrixF"
 			],
@@ -198,10 +202,6 @@
 			[
 				"coo",
 				"coord"
-			],
-			[
-				"kill",
-				"killFigure"
 			],
 			[
 				"att",
@@ -531,7 +531,7 @@
 			"file": "scripts/WoCaP.js",
 			"settings":
 			{
-				"buffer_size": 26469,
+				"buffer_size": 26687,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 51556,
+				"buffer_size": 51917,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 7634,
+				"buffer_size": 7793,
 				"line_ending": "Windows"
 			}
 		}
@@ -682,6 +682,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ston",
 			"dbg",
 			"movema",
 			"dbg",
@@ -808,8 +809,7 @@
 			"toggleVacant",
 			"поля",
 			"rightText",
-			"coord_toInx",
-			"toggleVa"
+			"coord_toInx"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -827,7 +827,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -866,15 +866,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26469,
+						"buffer_size": 26687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9084,
-								9084
+								15069,
+								15069
 							]
 						],
 						"settings":
@@ -884,10 +884,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4752.0,
+						"translation.y": 7778.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -896,15 +896,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 51556,
+						"buffer_size": 51917,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3393,
-								3393
+								5345,
+								5345
 							]
 						],
 						"settings":
@@ -913,10 +913,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1565.0,
+						"translation.y": 2311.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -931,15 +931,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7634,
+						"buffer_size": 7793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3619,
-								3619
+								3384,
+								3384
 							]
 						],
 						"settings":
@@ -947,7 +947,7 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2854.0,
+						"translation.y": 2571.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

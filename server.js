@@ -183,7 +183,7 @@ var GenerateField = function(w, h){
 			this.tile[num].vacant = null;
 			this.tile[num].figInx = null;
 
-			var killMe = Math.ceil(Math.random()*3); // fixme не рандом!
+			/*var killMe = Math.ceil(Math.random()*5); // fixme не рандом!
 			if(hh==1 && ww==1){
 				this.tile[num].type = 'tileGold'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)								
 			} else if(hh==this.h && ww==this.w){
@@ -192,9 +192,16 @@ var GenerateField = function(w, h){
 				this.tile[num].type = 'tileGrass';
 			} else if(killMe<3) {
 				this.tile[num].type = 'tileStone';
-			} else {
+			} else if(killMe<4){
 				this.tile[num].type = 'tileForest';
-			}
+			} else if(killMe<5){
+				this.tile[num].type = 'tileWater';
+			} else if(killMe<6){
+				this.tile[num].type = 'tileRock';
+			}*/
+				
+			this.tile[num].type = 'tileEmpty';
+
 			this.tile[num].info = 'Информация'; //fixme too
 			this.tile[num].bonus = 'пока хз как реализовать, видимо тупo CASE';
 
