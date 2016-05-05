@@ -1294,7 +1294,10 @@ eurecaServer.exports.mrkDown = function(gId, idd, inx){
 
 		//проверяем умер или нет атакующий, и второй
 
-		if(games[gId].figure[attInx].health<=0){
+		if(games[gId].figure[attInx].health<=0 && games[gId].figure[defInx].health<=0){
+			killFigure(gId, attInx);
+			killFigure(gId, defInx);
+		} else if(games[gId].figure[attInx].health<=0){
 			killFigure(gId, attInx);
 		} else if(games[gId].figure[defInx].health<=0){
 			toggleVacant(gId, games[gId].figure[attInx].coord, idd, games[gId].figureOnClick);

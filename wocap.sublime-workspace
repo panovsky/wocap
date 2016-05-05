@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"in",
+				"intf"
+			],
+			[
+				"exi",
+				"exitBattle"
+			],
+			[
+				"inf",
+				"intf"
+			],
+			[
 				"kill",
 				"killMe"
 			],
@@ -150,10 +162,6 @@
 			[
 				"coord",
 				"coord"
-			],
-			[
-				"in",
-				"inv"
 			],
 			[
 				"dea",
@@ -506,14 +514,6 @@
 			[
 				"h",
 				"hco"
-			],
-			[
-				"v",
-				"visible"
-			],
-			[
-				"red",
-				"red2"
 			]
 		]
 	},
@@ -531,7 +531,7 @@
 			"file": "scripts/WoCaP.js",
 			"settings":
 			{
-				"buffer_size": 26687,
+				"buffer_size": 27344,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 51917,
+				"buffer_size": 52247,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 7793,
+				"buffer_size": 8469,
 				"line_ending": "Windows"
 			}
 		}
@@ -682,6 +682,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"killF",
+			"killf",
+			"ddbut",
+			"btover",
+			"btOver",
+			"addButton",
+			"btExBattle",
+			"exitBattle",
+			"addButton",
+			"n addButton",
+			"exitBattle",
 			"ston",
 			"dbg",
 			"movema",
@@ -798,18 +809,7 @@
 			"king",
 			".anim",
 			"runar",
-			"idleArr",
-			"pawn",
-			"killFigure",
-			"charCodeAt",
-			"toggleVacant",
-			"vector",
-			"scale.se",
-			"coord_toY",
-			"toggleVacant",
-			"поля",
-			"rightText",
-			"coord_toInx"
+			"idleArr"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -827,7 +827,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -866,15 +866,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26687,
+						"buffer_size": 27344,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15069,
-								15069
+								12541,
+								12541
 							]
 						],
 						"settings":
@@ -884,10 +884,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7778.0,
+						"translation.y": 6728.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -896,15 +896,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 51917,
+						"buffer_size": 52247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5345,
-								5345
+								43706,
+								43706
 							]
 						],
 						"settings":
@@ -913,10 +913,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2311.0,
+						"translation.y": 17865.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -931,15 +931,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7793,
+						"buffer_size": 8469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3384,
-								3384
+								4339,
+								4339
 							]
 						],
 						"settings":
@@ -947,10 +947,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2571.0,
+						"translation.y": 3273.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1032,7 +1032,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
