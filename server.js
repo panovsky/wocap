@@ -124,20 +124,34 @@ function playerChekOponent(id){
 function createGame(id1, id2){
 	games[id1+id2] = new Game(id1, id2);
 
+	//...
+	games[id1+id2].pack1 = 'ksppth';
+	games[id1+id2].pack2 = 'ksppth';
+
+	for(var i=0; i<games[id1+id2].pack1.length; i+=1){
+		if(i==0){
+			dbGetFigure(games[id1+id2], id1, 'A:4', games[id1+id2].pack1[i]);
+		} else if(i==1){
+			dbGetFigure(games[id1+id2], id1, 'B:1', games[id1+id2].pack1[i]);
+		} else {
+			dbGetFigure(games[id1+id2], id1, '0:0', games[id1+id2].pack1[i]);
+		}
+	}
+
 	//	fixme вытяаскивать из БД стэк игрока
-	dbGetFigure(games[id1+id2], id1, 'A:4', 'king');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, 'B:1', 'slon');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, '0:0', 'pawn');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, '0:0', 'tower');//генерим для первого игрока
-	dbGetFigure(games[id1+id2], id1, '0:0', 'horse');//генерим для первого игрока
+	// dbGetFigure(games[id1+id2], id1, 'A:4', 'k');//генерим для первого игрока
+	// dbGetFigure(games[id1+id2], id1, 'B:1', 's');//генерим для первого игрока
+	// dbGetFigure(games[id1+id2], id1, '0:0', 'p');//генерим для первого игрока
+	// dbGetFigure(games[id1+id2], id1, '0:0', 'p');//генерим для первого игрока
+	// dbGetFigure(games[id1+id2], id1, '0:0', 't');//генерим для первого игрока
+	// dbGetFigure(games[id1+id2], id1, '0:0', 'h');//генерим для первого игрока
 
 
-	dbGetFigure(games[id1+id2], id2, 'D:2', 'king');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, 'D:3', 'slon');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'pawn');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'tower');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'horse');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, 'D:2', 'k');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, 'D:3', 's');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, '0:0', 'p');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, '0:0', 't');//генерим для не первого игрока
+	dbGetFigure(games[id1+id2], id2, '0:0', 'h');//генерим для не первого игрока
 	
 	var remote =  eurecaServer.getClient(id1);
 	remote.newGame(id1+id2, id2, games[id1+id2].field, games[id1+id2].turn/*, games[id1+id2].figure*/);
@@ -187,7 +201,7 @@ var GenerateField = function(w, h){
 			if(hh==1 && ww==1){
 				this.tile[num].type = 'tileGold'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)								
 			} else if(hh==this.h && ww==this.w){
-				this.tile[num].type = 'tileGold';
+				this.tile[num].type = 'tileGold'; //fixme если карта рандомногенерируемая - золото рандомно в первом(и последнем) ряду
 			} else if(killMe < 2){ 
 				this.tile[num].type = 'tileGrass';
 			} else if(killMe<3) {
@@ -216,12 +230,7 @@ var GenerateField = function(w, h){
 /////////////////////
 var GenerateFigures = function(gm, idd, crd, figTmp){ //gameId, playerId, coordinates
 
-	//	fixme тип фигуры передааать в фции из резерва игрока для данного героя (звучит пздц кнеш)
-
 	
-	
-	//для каждого генерим по очереди
-	// fixme видимо будем всё брать из базы. Если это король - ставим на поле, остальных в резерв
 	gm.figure.push({});
 	// инфа 
 	gm.figure[gm.figure.length-1].inx = gm.figure.length-1;
@@ -1047,9 +1056,9 @@ function moveMatrixF(gId, fig, result){
 			result[result.length-1].type = 'move';
 			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
 			if(fig.id == games[gId].id1){
-				result[result.length-1].angle = 0;					
+				result[result.length-1].angle = 90;					
 			} else if(fig.id == games[gId].id2){
-				result[result.length-1].angle = 180;
+				result[result.length-1].angle = 270;
 			}
 		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
 			// result[result.length-1].type = 'support'; 
@@ -1071,9 +1080,9 @@ function moveMatrixF(gId, fig, result){
 			result[result.length-1].type = 'move';
 			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
 			if(fig.id == games[gId].id1){
-				result[result.length-1].angle = 0;					
+				result[result.length-1].angle = 90;					
 			} else if(fig.id == games[gId].id2){
-				result[result.length-1].angle = 180;
+				result[result.length-1].angle = 270;
 			}
 		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
 			// result[result.length-1].type = 'support'; 
@@ -1095,9 +1104,9 @@ function moveMatrixF(gId, fig, result){
 			result[result.length-1].type = 'move';
 			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
 			if(fig.id == games[gId].id1){
-				result[result.length-1].angle = 0;					
+				result[result.length-1].angle = 180;					
 			} else if(fig.id == games[gId].id2){
-				result[result.length-1].angle = 180;
+				result[result.length-1].angle = 0;
 			}
 		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
 			// result[result.length-1].type = 'support'; 
@@ -1119,9 +1128,9 @@ function moveMatrixF(gId, fig, result){
 			result[result.length-1].type = 'move';
 			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
 			if(fig.id == games[gId].id1){
-				result[result.length-1].angle = 0;					
+				result[result.length-1].angle = 180;					
 			} else if(fig.id == games[gId].id2){
-				result[result.length-1].angle = 180;
+				result[result.length-1].angle = 0;
 			}
 		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
 			// result[result.length-1].type = 'support'; 
@@ -1143,9 +1152,9 @@ function moveMatrixF(gId, fig, result){
 			result[result.length-1].type = 'move';
 			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
 			if(fig.id == games[gId].id1){
-				result[result.length-1].angle = 0;					
+				result[result.length-1].angle = 270;					
 			} else if(fig.id == games[gId].id2){
-				result[result.length-1].angle = 180;
+				result[result.length-1].angle = 90;
 			}
 		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
 			// result[result.length-1].type = 'support'; 
@@ -1167,9 +1176,9 @@ function moveMatrixF(gId, fig, result){
 			result[result.length-1].type = 'move';
 			result[result.length-1].vector = 'urr';//для передвижения этот параметр не обязателен. только для атаки/помогаки
 			if(fig.id == games[gId].id1){
-				result[result.length-1].angle = 0;					
+				result[result.length-1].angle = 220;					
 			} else if(fig.id == games[gId].id2){
-				result[result.length-1].angle = 180;
+				result[result.length-1].angle = 90;
 			}
 		} else if(games[gId].field.tile[coord_toInx(result[result.length-1].coord, ww, hh)].vacant == fig.id) {
 			// result[result.length-1].type = 'support'; 
@@ -1507,10 +1516,10 @@ eurecaServer.exports.handshake = function(){
 /////////////////////
 // DATABASE get FIGURE
 /////////////////////
-dbGetFigure = function (gm, idd, crd, type){ // сюда пихаем создание фигуры и только после этого взываем к клиенту.
+dbGetFigure = function (gm, idd, crd, figId){ // сюда пихаем создание фигуры и только после этого взываем к клиенту.
 	
 
-	dbConnection.query('SELECT * from pieces WHERE Type = '+ '"' + type + '"', function(err, rows){
+	dbConnection.query('SELECT * from pieces WHERE id = '+ '"' + figId + '"', function(err, rows){
 				
 		GenerateFigures(gm, idd, crd, rows[0]);
 		

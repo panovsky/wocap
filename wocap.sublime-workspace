@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 8469,
+				"buffer_size": 8507,
 				"line_ending": "Windows"
 			}
 		}
@@ -931,15 +931,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8469,
+						"buffer_size": 8507,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4339,
-								4339
+								4149,
+								4149
 							]
 						],
 						"settings":
