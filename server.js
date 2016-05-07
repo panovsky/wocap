@@ -125,8 +125,8 @@ function createGame(id1, id2){
 	games[id1+id2] = new Game(id1, id2);
 
 	//...
-	games[id1+id2].pack1 = 'ksppth';
-	games[id1+id2].pack2 = 'ksppth';
+	games[id1+id2].pack1 = 'kssttthhpppppppp';
+	games[id1+id2].pack2 = 'kssttthhpppppppp';
 
 	for(var i=0; i<games[id1+id2].pack1.length; i+=1){
 		if(i==0){
@@ -161,7 +161,7 @@ var Game = function(id1, id2){
 	this.id1 = id1;
 	this.id2 = id2;
 	this.turn = id1;
-	this.field = new GenerateField(6, 4); // fixme юзеры выбирают размер  12*9 макс но эт дохуя
+	this.field = new GenerateField(5, 4); // fixme юзеры выбирают размер  12*9 макс но эт дохуя
 	this.figure = [];//new GenerateFigures(id1, id2);
 	this.figureOnClick = null; // записываем индекс кликнутой фигуры сюда.
 	this.win = null;

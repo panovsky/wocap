@@ -278,6 +278,18 @@ var mrkArr = [];
 // buttons
 var intf = [];
 
+// reserve
+var invRes = [];
+
+for(var ii=1; ii<5; ii+=1){
+  for(var jj =1; jj<5; jj+=1){
+    invRes.push({});
+    invRes[invRes.length-1].x = jj*70-35;
+    invRes[invRes.length-1].y = ii*70+315;
+    invRes[invRes.length-1].vacant = true;
+  }
+}
+
 // text on field
 var styleField = {
     font: "16px Arial",
@@ -490,6 +502,10 @@ function btLogout(){
 // BATTLE SCREEN START
 /////////////////////////////
 function startTestGame(gField, turn, figures){
+
+  // invres vacant all
+  invResVacant();
+
   //gameStateClear();
   game.gameState = 'battle';
   eurecaServer.playerState(myId, 'battle');
@@ -505,7 +521,7 @@ function startTestGame(gField, turn, figures){
 
   addButton('exitBattle', 'testButton', 70, 25, 'exit', btExBattle, 2.8, 1);
   addButton('settings', 'testButton', 210, 25, 'settings', btHello, 2.8, 1);  
-  addButton('timer', 'testButton', 140, 75, 'timer and timer', btHello, 5.6, 1);
+  addButton('timer', 'testButton', 140, 75, 'timer and money', btHello, 5.6, 1);
   addButton('chat', 'testButton', 140, 125, 'say something', btHello, 5.6, 1);
   addButton('log', 'testButton', 140, 250, 'log', btHello, 5.6, 4);
   addButton('reserve', 'testButton', 140, 490, 'reserve', btHello, 5.6, 5.6);
@@ -680,16 +696,27 @@ function clearMarkers(){
   mrkArr.length = 0;
 }
 
+//освобождаем интрфс резерва в начале партии
+function invResVacant(){
+  for(var ii=0; ii<invRes.length; ii+=1){
+    invRes[ii].vacant=true;
+  }
+}
 
 //в резерв
 function coord_toReserve(fgr){
-  console.log('any body hear me?');
   if(fgr.id == myId){
-    fgr.x = myWidth*.9;
-    fgr.y = myHeight*.9;
+    for(ii=0; ii<invRes.length; ii+=1){
+      if(invRes[ii].vacant){
+        fgr.x = invRes[ii].x;
+        fgr.y = invRes[ii].y;
+        invRes[ii].vacant = false;
+        break;
+      }
+    }
   } else {
-    fgr.x = 0;
-    fgr.y = 0;    
+    fgr.x = myWidth*0.625;
+    fgr.y = -100;    
   }
 }
 
