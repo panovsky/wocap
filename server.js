@@ -197,7 +197,8 @@ var GenerateField = function(w, h){
 			this.tile[num].vacant = null;
 			this.tile[num].figInx = null;
 
-			/*var killMe = Math.ceil(Math.random()*5); // fixme не рандом!
+			//fixme местность и мод - разные вещи должны быть (мод чайлдится к местности)
+			var killMe = Math.ceil(Math.random()*7); // fixme не рандом!
 			if(hh==1 && ww==1){
 				this.tile[num].type = 'tileGold'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)								
 			} else if(hh==this.h && ww==this.w){
@@ -212,9 +213,13 @@ var GenerateField = function(w, h){
 				this.tile[num].type = 'tileWater';
 			} else if(killMe<6){
 				this.tile[num].type = 'tileRock';
-			}*/
+			} else if(killMe<7){
+				this.tile[num].type = 'tileTemple';
+			} else if(killMe<8){
+				this.tile[num].type = 'tileTavern';
+			}
 				
-			this.tile[num].type = 'tileEmpty';
+			//this.tile[num].type = 'tileEmpty';
 
 			this.tile[num].info = 'Информация'; //fixme too
 			this.tile[num].bonus = 'пока хз как реализовать, видимо тупo CASE';

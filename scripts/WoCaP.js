@@ -363,6 +363,8 @@ function preload() {
   game.load.spritesheet('tileWater', 'img/tiles/water.jpg', 60, 60, 2);
   game.load.spritesheet('tileRock', 'img/tiles/rock.jpg', 60, 60, 2);
   game.load.spritesheet('tileGold', 'img/tiles/gold.jpg', 60, 60, 2);
+  game.load.spritesheet('tileTemple', 'img/tiles/temple.jpg', 60, 60, 2);
+  game.load.spritesheet('tileTavern', 'img/tiles/tavern.jpg', 60, 60, 2);
 
   game.load.spritesheet('pawn', 'img/pawn_list_.png', 60, 59, 100);
   game.load.spritesheet('king', 'img/king_list_.png', 60, 60, 100);
