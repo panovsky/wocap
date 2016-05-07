@@ -138,20 +138,15 @@ function createGame(id1, id2){
 		}
 	}
 
-	//	fixme вытяаскивать из БД стэк игрока
-	// dbGetFigure(games[id1+id2], id1, 'A:4', 'k');//генерим для первого игрока
-	// dbGetFigure(games[id1+id2], id1, 'B:1', 's');//генерим для первого игрока
-	// dbGetFigure(games[id1+id2], id1, '0:0', 'p');//генерим для первого игрока
-	// dbGetFigure(games[id1+id2], id1, '0:0', 'p');//генерим для первого игрока
-	// dbGetFigure(games[id1+id2], id1, '0:0', 't');//генерим для первого игрока
-	// dbGetFigure(games[id1+id2], id1, '0:0', 'h');//генерим для первого игрока
-
-
-	dbGetFigure(games[id1+id2], id2, 'D:2', 'k');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, 'D:3', 's');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'p');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 't');//генерим для не первого игрока
-	dbGetFigure(games[id1+id2], id2, '0:0', 'h');//генерим для не первого игрока
+	for(var i=0; i<games[id1+id2].pack2.length; i+=1){
+		if(i==0){
+			dbGetFigure(games[id1+id2], id2, 'D:2', games[id1+id2].pack2[i]);
+		} else if(i==1){
+			dbGetFigure(games[id1+id2], id2, 'D:3', games[id1+id2].pack2[i]);
+		} else {
+			dbGetFigure(games[id1+id2], id2, '0:0', games[id1+id2].pack2[i]);
+		}
+	}
 	
 	var remote =  eurecaServer.getClient(id1);
 	remote.newGame(id1+id2, id2, games[id1+id2].field, games[id1+id2].turn/*, games[id1+id2].figure*/);
@@ -198,7 +193,7 @@ var GenerateField = function(w, h){
 			this.tile[num].figInx = null;
 
 			//fixme местность и мод - разные вещи должны быть (мод чайлдится к местности)
-			var killMe = Math.ceil(Math.random()*7); // fixme не рандом!
+			/*var killMe = Math.ceil(Math.random()*7); // fixme не рандом!
 			if(hh==1 && ww==1){
 				this.tile[num].type = 'tileGold'; //fixme брать из базы степь, лес, проч (см заметку в айфоне)								
 			} else if(hh==this.h && ww==this.w){
@@ -217,9 +212,9 @@ var GenerateField = function(w, h){
 				this.tile[num].type = 'tileTemple';
 			} else if(killMe<8){
 				this.tile[num].type = 'tileTavern';
-			}
+			}*/
 				
-			//this.tile[num].type = 'tileEmpty';
+			this.tile[num].type = 'tileEmpty';
 
 			this.tile[num].info = 'Информация'; //fixme too
 			this.tile[num].bonus = 'пока хз как реализовать, видимо тупo CASE';
