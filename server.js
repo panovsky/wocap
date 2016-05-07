@@ -161,7 +161,7 @@ var Game = function(id1, id2){
 	this.id1 = id1;
 	this.id2 = id2;
 	this.turn = id1;
-	this.field = new GenerateField(5, 4); // fixme юзеры выбирают размер  12*9 макс но эт дохуя
+	this.field = new GenerateField(6, 4); // fixme юзеры выбирают размер  12*9 макс но эт дохуя
 	this.figure = [];//new GenerateFigures(id1, id2);
 	this.figureOnClick = null; // записываем индекс кликнутой фигуры сюда.
 	this.win = null;
@@ -357,7 +357,7 @@ function addSpawnMarkers(gId, fig, result, idd){
 		if(idd == games[gId].id1){
 			var crd = 'A:'+ii; 
 		} else if(idd == games[gId].id2){
-			var crd = String.fromCharCode(62+ww) + ':' + ii;
+			var crd = String.fromCharCode(64+hh) + ':' + ii;
 			//console.log(crd);
 		}
 		if(games[gId].field.tile[coord_toInx(crd, ww, hh)].vacant == null){ // клэтка свободна?
