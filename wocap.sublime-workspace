@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"le",
+				"length-1"
+			],
+			[
+				"inv",
+				"invRes"
+			],
+			[
+				"ii",
+				"ii"
+			],
+			[
+				"id",
+				"id2"
+			],
+			[
 				"in",
 				"intf"
 			],
@@ -112,10 +128,6 @@
 				"figTmp"
 			],
 			[
-				"le",
-				"length-1"
-			],
-			[
 				"k",
 				"king"
 			],
@@ -170,10 +182,6 @@
 			[
 				"sl",
 				"slash"
-			],
-			[
-				"id",
-				"idle"
 			],
 			[
 				"pla",
@@ -452,10 +460,6 @@
 				"vacant"
 			],
 			[
-				"inv",
-				"invIndex"
-			],
-			[
 				"sta",
 				"startPointY"
 			],
@@ -510,10 +514,6 @@
 			[
 				"maskfr",
 				"maskfr6"
-			],
-			[
-				"h",
-				"hco"
 			]
 		]
 	},
@@ -531,7 +531,7 @@
 			"file": "scripts/WoCaP.js",
 			"settings":
 			{
-				"buffer_size": 27344,
+				"buffer_size": 28084,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 52247,
+				"buffer_size": 52112,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 8507,
+				"buffer_size": 9287,
 				"line_ending": "Windows"
 			}
 		}
@@ -592,6 +592,7 @@
 	],
 	"file_history":
 	[
+		"/E/webServers/home/localhost/www/makaka/game.js",
 		"/E/webServers/home/localhost/www/wocapclient/index.html",
 		"/W/home/localhost/www/wocap/index.html",
 		"/E/webServers/home/localhost/www/wocapclient/scripts/WoCaP.js",
@@ -682,6 +683,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"animation",
+			"findPath3a",
+			"code(",
+			"wnmarker",
+			"Marker",
+			"tores",
+			"dbge",
+			"invres",
+			"tores",
+			"ttes",
+			"ttest",
+			"toreserve",
+			"coord_toReserve",
+			"reserve",
+			"coord_toReserve",
+			"0:0",
+			"crd ==",
+			"coord ==",
+			"GenerateField",
+			"dbget",
+			"dbG",
+			"GenerateFigures",
+			"dbGetFigure",
+			"dbg",
+			"movematrixf",
 			"killF",
 			"killf",
 			"ddbut",
@@ -784,32 +810,7 @@
 			"butt",
 			"startTestGame",
 			"createNewFigure",
-			"create",
-			"eurecaClientSetup",
-			"preloader",
-			"gField",
-			"GenerateFigures",
-			"figure",
-			"addNewFigure",
-			"startTestGame",
-			"addNewFigure",
-			"GenerateFigures",
-			"dbGetFigure",
-			"GenerateFigures",
-			"dbGetFigure",
-			"GenerateFigures",
-			"dbGetFigure",
-			"fixme",
-			"dbGetFigure",
-			"dbG",
-			"dbg",
-			"DATABASE",
-			"conne",
-			"pawn",
-			"king",
-			".anim",
-			"runar",
-			"idleArr"
+			"create"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -866,15 +867,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 27344,
+						"buffer_size": 28084,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12541,
-								12541
+								0,
+								0
 							]
 						],
 						"settings":
@@ -884,10 +885,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6728.0,
+						"translation.y": 1926.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -896,15 +897,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 52247,
+						"buffer_size": 52112,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								43706,
-								43706
+								52056,
+								52056
 							]
 						],
 						"settings":
@@ -913,10 +914,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 17865.0,
+						"translation.y": 21120.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -931,15 +932,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8507,
+						"buffer_size": 9287,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4149,
-								4149
+								4537,
+								4537
 							]
 						],
 						"settings":
@@ -947,10 +948,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3273.0,
+						"translation.y": 3460.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1032,7 +1033,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

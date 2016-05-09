@@ -768,6 +768,7 @@ function coord_toY(crd){
   return field.tile[num].y; 
 }
 
+// координаты в индекс массива поля
 function coord_toNum(crd){
   if(crd.length>3){
     var ww = parseInt(crd[2]+crd[3], 10);
