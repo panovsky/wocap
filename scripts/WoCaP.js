@@ -124,6 +124,16 @@ var eurecaClientSetup = function() {
     clearMarkers();
   }
 
+  eurecaClient.exports.waitInfo = function(players, waiting, games){
+    intf.push(game.add.text(myWidth/2, myHeight/2, 'Players online: \n Players wait: \n Battles: ', styleR));
+    intf[intf.length-1].anchor.setTo(1, 0.5);
+
+    intf.push(game.add.text(myWidth/2, myHeight/2, players + '\n' + waiting + '\n' + games, styleL));
+    intf[intf.length-1].anchor.setTo(0, 0.5);
+
+    addButton('exitWait', 'testButton', myWidth*0.5, myHeight*0.8, 'back to garage', btBackToGarage, 4, 1);
+  }
+
   eurecaClient.exports.getFigureMove = function(inx, coord){
     inv[inx].coord = coord;
     //inv[inx].width += 100;  // fixme
@@ -301,6 +311,18 @@ var styleButton = {
     font: "24px Arial",
     fill: "#dddddd",
     align: "center"
+}
+
+var styleL = {
+    font: "24px Arial",
+    fill: "#dddddd",
+    align: "left"
+}
+
+var styleR = {
+    font: "24px Arial",
+    fill: "#dddddd",
+    align: "right"
 }
 
 var styleAttr = {
@@ -492,6 +514,16 @@ function btBattle(){
 
   stopGarage();
   //startTestGame();
+
+  //intf.push(game.add.text(myWidth*0.5, myHeight/2, 'valera /n 23', styleButton));
+  
+  
+}
+
+function btBackToGarage(){
+  destroyerAsAr(intf);
+  startGarage();
+
 }
 
 function btLogout(){
@@ -504,6 +536,7 @@ function btLogout(){
 // BATTLE SCREEN START
 /////////////////////////////
 function startTestGame(gField, turn, figures){
+  destroyerAsAr(intf); // очистка всякого
 
   // invres vacant all
   invResVacant();

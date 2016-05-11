@@ -18,7 +18,7 @@ var Eureca = require('eureca.io');
 
 //create an instance of EurecaServer
 //var eurecaServer = new EurecaServer({allow:['setId', 'spawnEnemy', 'kill', 'testRemote', 'loginAnswer', 'newGame', 'chat', 'getMarkers', 'getSpawnMarkers', 'ungetMarkers', 'getFigureMove', 'getFigureAttack', 'addNewFigure', 'tgPreloader']});
-var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'testRemote', 'loginAnswer', 'newGame', 'chat', 'getMarkers', 'getSpawnMarkers', 'ungetMarkers', 'getFigureMove', 'getFigureAttack', 'addNewFigure', 'tgPreloader']});
+var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'testRemote', 'loginAnswer', 'newGame', 'chat', 'getMarkers', 'getSpawnMarkers', 'ungetMarkers', 'getFigureMove', 'getFigureAttack', 'addNewFigure', 'tgPreloader', 'waitInfo']});
 var clients = {};
 
 // ОЧЕРЕДЬ
@@ -56,7 +56,9 @@ dbConnection.query('SELECT * from users', function(err, rows, fields) {
 /////////////////////
 //detect client connection
 ///////////////////// 
+var playerCounter = 0;
 eurecaServer.onConnect( function (conn) {
+	playerCounter += 1;
 	// body...
 	console.log('New Client id=%s ', conn.id, conn.remoteAdress);
 
@@ -90,6 +92,17 @@ eurecaServer.exports.playerState = function(con, state){
 	
 	if(clients[con].state == 'wait') {
 		playerChekOponent(id);
+		
+	}
+
+	if(clients[con].state == 'garage'){
+		if(clientsWait.indexOf(clients[con]) != -1){
+			// console.log('он в очереди!  -' + clientsWait.length);
+			clientsWait.splice(clientsWait.indexOf(clients[con]), 1);
+			// delete clientsWait[clientsWait.indexOf(clients[con])];
+		} else {
+			// console.log('он не в очереди!  -' + clientsWait.length);
+		}
 	}
 }
 
@@ -97,17 +110,20 @@ eurecaServer.exports.playerState = function(con, state){
 //  ОЧЕРЕДЬ И БАЛАНСЕР
 /////////////////////
 function playerChekOponent(id){
+	var remote = eurecaServer.getClient(id);
 	if(clientsWait.length>0){
 		//	BALANCER
 
 		//	CREATE PvP
 		createGame(clients[id].id, clientsWait[0].id);
-		delete clientsWait[0];
+		clientsWait.splice(0, 1);
+		// delete clientsWait[0];
 		sortAndClean();
 
 
 	} else {		
 		clientsWait.push(clients[id]);
+		remote.waitInfo(playerCounter, clientsWait.length, gamesCounter);
 	}
 
 
@@ -121,6 +137,8 @@ function playerChekOponent(id){
 /////////////////////
 // НОВАЯ ИГРА
 /////////////////////
+var gamesCounter = 0;
+
 function createGame(id1, id2){
 	games[id1+id2] = new Game(id1, id2);
 
@@ -154,6 +172,8 @@ function createGame(id1, id2){
 	remote = eurecaServer.getClient(id2);
 	remote.newGame(id1+id2, id1, games[id1+id2].field, games[id1+id2].turn/*, games[id1+id2].figure*/);
 	
+	gamesCounter += 1;
+
 }
 
 var Game = function(id1, id2){
@@ -1483,6 +1503,8 @@ eurecaServer.exports.say = function(gId, enId, msg){
 /////////////////////
 eurecaServer.onDisconnect(function (conn){
 	// body...
+	playerCounter -= 1;
+
 	console.log('Client disconnected', conn.id);
 
 	var removeId = clients[conn.id].id;

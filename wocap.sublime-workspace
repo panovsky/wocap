@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 9359,
+				"buffer_size": 9385,
 				"line_ending": "Windows"
 			}
 		}
@@ -885,10 +885,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6454.0,
+						"translation.y": 6409.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -917,7 +917,7 @@
 						"translation.y": 1666.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -932,15 +932,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9359,
+						"buffer_size": 9385,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4761,
-								4761
+								4795,
+								4795
 							]
 						],
 						"settings":
@@ -948,10 +948,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3468.0,
+						"translation.y": 3650.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1033,7 +1033,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
