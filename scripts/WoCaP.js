@@ -474,6 +474,8 @@ function startGarage(){
 
   addButton('battleStart', 'testButton', myWidth*0.5, myHeight*0.1, 'battle', btBattle, 4, 1);
   addButton('logout', 'testButton', myWidth*0.85, myHeight*0.1, 'logout', btLogout, 4, 1);
+
+  
 }
 
 function stopGarage(){

@@ -125,8 +125,8 @@ function createGame(id1, id2){
 	games[id1+id2] = new Game(id1, id2);
 
 	//...
-	games[id1+id2].pack1 = 'kssttthhpppppppp';
-	games[id1+id2].pack2 = 'kssttthhpppppppp';
+	games[id1+id2].pack1 = 'kssttthhppppp';
+	games[id1+id2].pack2 = 'kssttthhppppp';
 
 	for(var i=0; i<games[id1+id2].pack1.length; i+=1){
 		if(i==0){

@@ -531,7 +531,7 @@
 			"file": "scripts/WoCaP.js",
 			"settings":
 			{
-				"buffer_size": 28084,
+				"buffer_size": 28088,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 52112,
+				"buffer_size": 52106,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 9287,
+				"buffer_size": 9359,
 				"line_ending": "Windows"
 			}
 		}
@@ -683,6 +683,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"destroyerAsAr",
+			"garage",
+			"gara",
 			"animation",
 			"findPath3a",
 			"code(",
@@ -807,10 +810,7 @@
 			"newf",
 			"togg",
 			"battleStart",
-			"butt",
-			"startTestGame",
-			"createNewFigure",
-			"create"
+			"butt"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -828,7 +828,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -867,15 +867,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 28084,
+						"buffer_size": 28088,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								12471,
+								12471
 							]
 						],
 						"settings":
@@ -885,10 +885,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1926.0,
+						"translation.y": 6454.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -897,15 +897,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 52112,
+						"buffer_size": 52106,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52056,
-								52056
+								3055,
+								3055
 							]
 						],
 						"settings":
@@ -914,10 +914,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 21120.0,
+						"translation.y": 1666.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -932,15 +932,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9287,
+						"buffer_size": 9359,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4537,
-								4537
+								4761,
+								4761
 							]
 						],
 						"settings":
@@ -948,7 +948,7 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3460.0,
+						"translation.y": 3468.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
