@@ -77,12 +77,18 @@ var eurecaClientSetup = function() {
   }
 
   // ответ от серванта о юзере-пароле
-  eurecaClient.exports.loginAnswer = function(answ){
+  var myData;
+
+  eurecaClient.exports.loginAnswer = function(answ, usrData){//fixme оч легко обходится
 
     console.log(answ);
     if(answ == 'yes'){
       loginSucces = true;
+      myData = usrData;
       startGarage();
+
+      console.log(myData);
+
     } else {
       startLogin();
     }
@@ -315,7 +321,7 @@ var styleButton = {
 
 var styleL = {
     font: "24px Arial",
-    fill: "#dddddd",
+    fill: "#dddd55",
     align: "left"
 }
 
@@ -494,9 +500,16 @@ function startGarage(){
   game.gameState = 'garage';
   eurecaServer.playerState(myId, 'garage');
 
+  //buttons
   addButton('battleStart', 'testButton', myWidth*0.5, myHeight*0.1, 'battle', btBattle, 4, 1);
-  addButton('logout', 'testButton', myWidth*0.85, myHeight*0.1, 'logout', btLogout, 4, 1);
+  addButton('logout', 'testButton', myWidth*0.1, myHeight*0.1, 'logout', btLogout, 4, 1);
 
+  //textinfo
+  intf.push(game.add.text(myWidth * 0.1, myHeight * 0.36, 'Name: \n Gold: \n Silver: ', styleR));
+  intf[intf.length-1].anchor.setTo(1, 0.5);
+  
+  intf.push(game.add.text(myWidth * 0.1, myHeight * 0.36, myData.nick + '\n' + myData.gold + '\n' + myData.copper, styleL));
+  intf[intf.length-1].anchor.setTo(0, 0.5);
   
 }
 

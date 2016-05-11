@@ -1561,9 +1561,10 @@ eurecaServer.exports.checkLogin = function(con, eml, pwd){
 		if(rows.length != 0){
 	    	console.log(rows[0].mail);
 	    	if(rows[0].pass == pwd){
-	    		clients[con].baseId = rows.id;
+	    		clients[con].baseId = rows[0].id;
 	    		console.log('password right');
-	    		remote.loginAnswer('yes');
+	    		remote.loginAnswer('yes', rows[0]);
+	    		console.log(rows[0]);
 	    		//return('yes');
 	    	} else {
 				console.log('Wrong password or email');
