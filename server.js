@@ -1549,9 +1549,9 @@ dbGetFigure = function (gm, idd, crd, figId){ // сюда пихаем созд�
 }
 
 
-/////////////////////
+//////////////////////
 // DATABASE чек по ЕМАЙЛу
-/////////////////////
+//////////////////////
 eurecaServer.exports.checkLogin = function(con, eml, pwd){
 	console.log(eml + ' : ' + pwd);
 	var remote = eurecaServer.getClient(con);
@@ -1564,7 +1564,7 @@ eurecaServer.exports.checkLogin = function(con, eml, pwd){
 	    		clients[con].baseId = rows[0].id;
 	    		console.log('password right');
 	    		remote.loginAnswer('yes', rows[0]);
-	    		console.log(rows[0]);
+	    		//console.log(rows[0]);
 	    		//return('yes');
 	    	} else {
 				console.log('Wrong password or email');

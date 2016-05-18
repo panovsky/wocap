@@ -34,6 +34,7 @@ var eurecaServer;
 var myId; // my iD
 var enId; // enemy ID
 var gameId; // game ID
+var myData;
 
 var loginSucces = false;
 
@@ -77,7 +78,7 @@ var eurecaClientSetup = function() {
   }
 
   // ответ от серванта о юзере-пароле
-  var myData;
+
 
   eurecaClient.exports.loginAnswer = function(answ, usrData){//fixme оч легко обходится
 
@@ -87,7 +88,7 @@ var eurecaClientSetup = function() {
       myData = usrData;
       startGarage();
 
-      console.log(myData);
+      console.log(usrData);
 
     } else {
       startLogin();
@@ -510,6 +511,12 @@ function startGarage(){
   
   intf.push(game.add.text(myWidth * 0.1, myHeight * 0.36, myData.nick + '\n' + myData.gold + '\n' + myData.copper, styleL));
   intf[intf.length-1].anchor.setTo(0, 0.5);
+
+  //рисуем текущий пак
+
+  //сбоку другие паки(надо название придумать срочно, а то всё паки, да паки)
+
+  //
   
 }
 
