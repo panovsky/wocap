@@ -531,7 +531,7 @@
 			"file": "scripts/WoCaP.js",
 			"settings":
 			{
-				"buffer_size": 29384,
+				"buffer_size": 29493,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 52763,
+				"buffer_size": 52765,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "_RoadMap",
 			"settings":
 			{
-				"buffer_size": 9539,
+				"buffer_size": 9570,
 				"line_ending": "Windows"
 			}
 		}
@@ -592,6 +592,8 @@
 	],
 	"file_history":
 	[
+		"/E/wotSnd913/events_",
+		"/E/wotSnd913/events_tr",
 		"/E/webServers/home/localhost/www/bionator/scripts/bionator_s.js",
 		"/E/webServers/home/localhost/www/makaka/game.js",
 		"/E/webServers/home/localhost/www/wocapclient/index.html",
@@ -829,7 +831,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -868,15 +870,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 29384,
+						"buffer_size": 29493,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8488,
-								8488
+								13439,
+								13439
 							]
 						],
 						"settings":
@@ -886,7 +888,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4614.0,
+						"translation.y": 6817.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -898,15 +900,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 52763,
+						"buffer_size": 52765,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52278,
-								52289
+								51769,
+								51769
 							]
 						],
 						"settings":
@@ -915,10 +917,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 21676.0,
+						"translation.y": 21542.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -933,15 +935,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9539,
+						"buffer_size": 9570,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4763,
-								4763
+								4786,
+								4786
 							]
 						],
 						"settings":
@@ -949,10 +951,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3567.0,
+						"translation.y": 3623.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1034,7 +1036,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
