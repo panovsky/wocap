@@ -190,7 +190,7 @@ var eurecaClientSetup = function() {
 
 }
 
-// ИГРА ОКОНЧЕНА
+// ИГРА ОКОНЧЕНА __
 function battleComplete(win){
   //вырубаем инпуты
   for(i=0; i<inv.length; i+=1){

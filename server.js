@@ -41,7 +41,7 @@ var dbConnection = mysql.createConnection({
   database : 'wocapdb0'
 });
 
-dbConnection.connect;
+dbConnection.connect; //asd
 
 dbConnection.query('SELECT * from users', function(err, rows, fields) {
   if (!err)
